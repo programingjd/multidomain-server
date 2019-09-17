@@ -14,10 +14,8 @@ const splitUri=uri=>{
 };
 
 /**
- * @params {
- *   Array<
- *     {
- *       accept:function(
+ * @param {
+ *     ...{accept:function(
  *         request:http2.Http2ServerRequest?,
  *         response:http2.Http2ServerResponse?,
  *         hostname:string?,
@@ -27,7 +25,6 @@ const splitUri=uri=>{
  *       ),
  *       handle:function(any)
  *     }
- *   >
  * } handlers
  * @returns {function(
  *   request:http2.Http2ServerRequest?,
@@ -38,7 +35,7 @@ const splitUri=uri=>{
 *    server:MultiServer?
  * )}
  */
-module.exports=(handlers)=>{
+module.exports=(...handlers)=>{
   return (request,response,hostname,remoteAddress,local,server)=>{
     request.setTimeout(300000);
     const [path,params]=splitUri(request.url);
