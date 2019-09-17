@@ -17,7 +17,7 @@ const server=MultiServer();
         acme: {
           email: 'contact@example.com'
         },
-        handler: handlers([ await require('./static')('www1') ])
+        handler: handlers(await require('./static')('www1'))
       }),
       server.addServer({
         hostnames: [ 'localhost2' ],
@@ -30,7 +30,7 @@ const server=MultiServer();
         acme: {
           email: 'contact@example.com'
         },
-        handler: handlers([ await require('./static')('www2') ])
+        handler: handlers(await require('./static')('www2'))
       })
     ]
   )
