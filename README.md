@@ -248,3 +248,12 @@ server.addServer(
   }
 )
 ```
+
+### Updating files
+
+Since the files are loading in memory, changes to the files on disk have no effect
+until the server is restarted or the following endpoint is used.
+
+`https://mydomain.com/sync`
+
+This endpoint is only valid when called from the local host.
