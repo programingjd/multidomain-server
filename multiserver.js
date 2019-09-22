@@ -4,13 +4,22 @@ const http2=require('http2');
 const tls=require('tls');
 const acme=require('acme-client');
 
+const systemdFirstSocket=()=>{
+  if(process.env.LISTEN_FDS) return { fd: 3 };
+};
+const systemdSecondSocket=()=>{
+  if(process.env.LISTEN_FDS) return { fd: 4 };
+};
+
 /**
  * @namespace MultiServer
- * @param httpPort
- * @param httpsPort
+ * @param {number} [httpPort=80]
+ * @param {number} [httpsPort=443]
  * @constructor
  */
-module.exports.MultiServer=(httpPort=80,httpsPort=443)=>{
+module.exports.MultiServer=(httpPort,httpsPort)=>{
+  if(!httpPort) httpPort=systemdFirstSocket()||80;
+  if (!httpsPort) httpsPort=systemdSecondSocket()||443;
   const http01='/.well-known/acme-challenge/';
   const servers={};
   const multiServer={};
