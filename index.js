@@ -1,6 +1,5 @@
 const MultiServer=require('./multiserver').MultiServer;
 const handlers=require('./handlers');
-const files=require('./handlers');
 
 const server=MultiServer();
 (async ()=>{
