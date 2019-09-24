@@ -2,7 +2,7 @@
   "name": "multidomain-server",
   "version": "1.0.0",
   "description": "Server that can handle requests to multiple domain names with different certificates.",
-  "main": "index.js",
+  "main": "example.js",
   "scripts": {},
   "keywords": [],
   "author": "Jerome DAVID",
