@@ -12,12 +12,12 @@ const systemdSecondSocket=()=>{
 };
 
 /**
- * @namespace MultiServer
+ * @namespace MultiDomainServer
  * @param {number} [httpPort=80]
  * @param {number} [httpsPort=443]
  * @constructor
  */
-module.exports.MultiServer=(httpPort,httpsPort)=>{
+module.exports.MultiDomainServer=(httpPort,httpsPort)=>{
   if(!httpPort) httpPort=systemdFirstSocket()||80;
   if (!httpsPort) httpsPort=systemdSecondSocket()||443;
   const http01='/.well-known/acme-challenge/';
@@ -119,7 +119,7 @@ module.exports.MultiServer=(httpPort,httpsPort)=>{
    *     hostname:string?,
    *     remoteAddress:string?,
    *     local:boolean?,
-   *     server:MultiServer?
+   *     server:MultiDomainServer?
    *   ),
    *   acme:{email:string},
    *   hostnames:string[],

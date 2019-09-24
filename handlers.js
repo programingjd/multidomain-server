@@ -21,18 +21,18 @@ const splitUri=uri=>{
  *         hostname:string?,
  *         remoteAddress:string?,
  *         local:boolean?,
- *         server:MultiServer?
+ *         server:MultiDomainServer?
  *       ),
  *       handle:function(any)
  *     }
  * } handlers
  * @returns {function(
  *   request:http2.Http2ServerRequest?,
-*    response:http2.Http2ServerResponse?,
-*    hostname:string?,
-*    remoteAddress:string?,
-*    local:boolean?,
-*    server:MultiServer?
+ *    response:http2.Http2ServerResponse?,
+ *    hostname:string?,
+ *    remoteAddress:string?,
+ *    local:boolean?,
+ *    server:MultiDomainServer?
  * )}
  */
 module.exports=(...handlers)=>{

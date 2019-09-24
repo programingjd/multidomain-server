@@ -1,7 +1,7 @@
-const MultiServer=require('./multiserver').MultiServer;
+const MultiDomainServer=require('./multidomain-server').MultiDomainServer;
 const handlers=require('./handlers');
 
-const server=MultiServer();
+const server=MultiDomainServer();
 (async ()=>{
   await Promise.all(
     [

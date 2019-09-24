@@ -11,8 +11,8 @@ Built-in Let's Encrypt certificate renewal.
 # Setup
 
 ```javascript 1.8
-const MultiServer=require('./multiserver').MultiServer;
-const server = MultiServer();
+const MultiDomainServer=require('./multidomain-server').MultiDomainServer;
+const server = MultiDomainServer();
 (async ()=>{
   await Promise.all(
     [
