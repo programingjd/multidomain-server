@@ -14,5 +14,6 @@
   "repository": "github:programingjd/multidomain-server",
   "engines": {
     "node": ">=8.0"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
