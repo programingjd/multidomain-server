@@ -1,13 +1,18 @@
 {
-  "name": "node_server",
+  "name": "multidomain-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server that can handle requests to multiple domain names with different certificates.",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jerome DAVID",
+  "license": "MIT",
   "dependencies": {
     "acme-client": "^3.1.0"
+  },
+  "homepage": "https://github.com/programingjd/multidomain-server#readme",
+  "repository": "github:programingjd/multidomain-server",
+  "engines": {
+    "node": ">=8.0"
   }
 }
