@@ -18,52 +18,52 @@ const server = MultiDomainServer();
     [
        server.addServer(
          {
-            hostnames: [ // list of domains for this specific handler 
-              'mydomain.com', // first one is the primary
-              'www.mydomain.com', // redirects to primary
-              'mydomain.net', // redirects to primary
-              'www.mydomain.net'  // redirects to primary
-            ]
-         },
-         key: { // tls certificate key
-           path: 'mydomain.key.pem'
-         },
-         cert: { // tls certificate
-           path: 'mydomcain.cert.pem'
-         },
-         acme: { // let's encrypt account for certificate renewal (optional)
-           email: 'contact@mydomain.com'
-         },
-         handler: (request,response,hostname,remoteAddress,local,server)=>{
-           response.writeHead(200, { 'Content-Type': 'text/plain' });
-           response.write(`Hostname: ${hostname}\n`);
-           response.write(`Remote address: ${remoteAddress}\n`);
-           response.write(`Request from localhost: ${local}\n`);
-           response.end();
-         }
+           hostnames: [ // list of domains for this specific handler 
+             'mydomain.com', // first one is the primary
+             'www.mydomain.com', // redirects to primary
+             'mydomain.net', // redirects to primary
+             'www.mydomain.net'  // redirects to primary
+           ],
+           key: { // tls certificate key
+             path: 'mydomain.key.pem'
+           },
+           cert: { // tls certificate
+             path: 'mydomcain.cert.pem'
+           },
+           acme: { // let's encrypt account for certificate renewal (optional)
+             email: 'contact@mydomain.com'
+           },
+           handler: (request,response,hostname,remoteAddress,local,server)=>{
+             response.writeHead(200, { 'Content-Type': 'text/plain' });
+             response.write(`Hostname: ${hostname}\n`);
+             response.write(`Remote address: ${remoteAddress}\n`);
+             response.write(`Request from localhost: ${local}\n`);
+             response.end();
+           }
+         }  
        ),
        server.addServer(
          {
-            hostnames: [ // list of domains for this specific handler 
-              'myotherdomain.com', // first one is the primary
-              'www.myotherdomain.com' // redirects to primary
-            ]
-         },
-         key: { // tls certificate key
-           path: 'myotherdomain.key.pem'
-         },
-         cert: { // tls certificate
-           path: 'myotherdomcain.cert.pem'
-         },
-         acme: { // let's encrypt account for certificate renewal (optional)
-           email: 'contact@myotherdomain.com'
-         },
-         handler: (request,response,hostname,remoteAddress,local,server)=>{
-           response.writeHead(200, { 'Content-Type': 'text/plain' });
-           response.write(`Hostname: ${hostname}\n`);
-           response.write(`Remote address: ${remoteAddress}\n`);
-           response.write(`Request from localhost: ${local}\n`);
-           response.end();
+           hostnames: [ // list of domains for this specific handler 
+             'myotherdomain.com', // first one is the primary
+             'www.myotherdomain.com' // redirects to primary
+           ],
+           key: { // tls certificate key
+             path: 'myotherdomain.key.pem'
+           },
+           cert: { // tls certificate
+             path: 'myotherdomcain.cert.pem'
+           },
+           acme: { // let's encrypt account for certificate renewal (optional)
+             email: 'contact@myotherdomain.com'
+           },
+           handler: (request,response,hostname,remoteAddress,local,server)=>{
+             response.writeHead(200, { 'Content-Type': 'text/plain' });
+             response.write(`Hostname: ${hostname}\n`);
+             response.write(`Remote address: ${remoteAddress}\n`);
+             response.write(`Request from localhost: ${local}\n`);
+             response.end();
+           }
          }
        )
     ]
