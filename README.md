@@ -19,10 +19,10 @@ const server = MultiDomainServer();
        server.addServer(
          {
            hostnames: [ // list of domains for this specific handler 
-             'mydomain.com', // first one is the primary
-             'www.mydomain.com', // redirects to primary
-             'mydomain.net', // redirects to primary
-             'www.mydomain.net'  // redirects to primary
+             'mydomain.com',
+             'www.mydomain.com', // automatically redirects to mydomain.com
+             'mydomain.net',
+             'www.mydomain.net'  // automatically redirects to mydomain.net
            ],
            key: { // tls certificate key
              path: 'mydomain.key.pem'

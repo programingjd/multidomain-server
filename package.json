@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Server that can handle requests to multiple domain names with different certificates.",
   "main": "example.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "bit import"
+  },
   "keywords": [],
   "author": "Jerome DAVID",
   "license": "MIT",
@@ -15,5 +17,15 @@
   "engines": {
     "node": ">=8.0"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@programingjd"
+  },
+  "devDependencies": {
+    "bit-bin": "^14.4.0"
+  },
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }
